@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
+import Mensagem from '../Mensagem/Mensagem'
 
 export default function Header() {
     return (
         <View style={styles.header}>
           <Text style={styles.text}> Turn On/Off</Text>
-          <Text style={styles.recado}>Olá Kakyzx. Você tem 19. seu status é inativo.</Text>
+          <Mensagem/>
         </View>
     );
   }
