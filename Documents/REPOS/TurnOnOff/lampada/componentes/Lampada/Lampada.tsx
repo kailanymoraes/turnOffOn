@@ -6,6 +6,10 @@ import React, {useState} from 'react';
 export default function Lampada() {
 
   const [ligado, setLigado] = useState(true); //hook
+  const [mensagem, setMensagem] = useState("Ligado");
+
+  //passo 1 - criar o hook - variável e o setter
+  //passo 2 - inicializar o state ou a 
 
   function TurnOnOff() {
 
@@ -15,10 +19,10 @@ export default function Lampada() {
       else {
            setLigado = true;
       } */
-      setLigado(!ligado)
-  }
+      setLigado(!ligado);
+      setMensagem(ligado?"Desligado":"Ligado");
 
-  const [aceso, setAceso] = useState(true);
+  }
 
 
     return (
@@ -27,8 +31,10 @@ export default function Lampada() {
             <Image source={ligado?lampOn:lampOff} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={lampadaStyles.button}>
-             <Text style={lampadaStyles.buttonText}>Acendeu</Text>
+        <TouchableOpacity style={lampadaStyles.button} onPress={TurnOnOff}>
+             <Text style={lampadaStyles.buttonText}>
+                {mensagem}
+             </Text>
         </TouchableOpacity>
 
         <Text style={lampadaStyles.textAcesso}>Hello World Home!</Text>

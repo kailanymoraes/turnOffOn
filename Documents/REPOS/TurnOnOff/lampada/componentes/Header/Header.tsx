@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <View style={styles.header}>
           <Text style={styles.text}> Turn On/Off</Text>
-          <Mensagem/>
+          <Mensagem status={false} nome="Pedrinho" idade={22}/>
         </View>
     );
   }
